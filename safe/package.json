@@ -1,0 +1,16 @@
+{
+  "name": "ngo-directory",
+  "version": "1.0.0",
+  "description": "NGO Directory - Discover and support verified NGOs",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": ["ngo", "directory", "charity", "nonprofit"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

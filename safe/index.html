@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NGO Directory</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="container">
+        <h1>NGO Directory</h1>
+        <p class="subtitle">Discover and support verified NGOs</p>
+        <div class="filters">
+            <input id="search-bar" type="text" placeholder="Search by name or description" aria-label="Search NGOs">
+            <select id="filter-category" aria-label="Filter by category">
+                <option value="">All categories</option>
+                <option value="education">Education</option>
+                <option value="health">Health</option>
+                <option value="environment">Environment</option>
+                <option value="poverty">Poverty Alleviation</option>
+                <option value="animals">Animal Welfare</option>
+                <option value="disaster">Disaster Relief</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="ngo-section">
+            <div id="ngo-list" class="grid"></div>
+        </section>
+
+        <section id="feedback-section">
+            <h2>Suggest an NGO</h2>
+            <form id="feedback-form" class="card form">
+                <div class="field">
+                    <label for="suggestedName">NGO name</label>
+                    <input id="suggestedName" name="suggestedName" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="userEmail">Your email</label>
+                    <input id="userEmail" name="userEmail" type="email" required>
+                </div>
+                <div class="field">
+                    <label for="reason">Why do you recommend this NGO?</label>
+                    <textarea id="reason" name="reason" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Submit suggestion</button>
+                <p id="feedback-status" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Chatbot integration -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/10/22/16/20251022163802-PMVH6LIT.js" defer></script>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
+
+

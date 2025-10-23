@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      // Replace with your admin email(s) or switch to custom claims
+      return request.auth != null && request.auth.token.email in [
+        "udhayrobot@gmail.com"
+      ];
+    }
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    match /ngos/{id} {
+      allow read: if true;            // public can read NGOs
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /feedback/{id} {
+      allow create: if true;          // anyone can submit feedback
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}
+
+

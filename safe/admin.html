@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NGO Directory — Admin</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Admin Dashboard</h1>
+        <p class="subtitle">Manage NGOs and review feedback</p>
+        <div id="admin-actions" class="row" style="display:none">
+            <button id="sign-out" class="btn">Sign out</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="login-section" class="card form">
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <div class="field">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" type="email" required autocomplete="username">
+                </div>
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" type="password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn primary">Sign in</button>
+                <p id="login-status" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="dashboard" style="display:none">
+            <div class="grid two">
+                <div>
+                    <h2 id="form-title">Add NGO</h2>
+                    <form id="ngo-form" class="card form">
+                        <div class="field"><label for="name">Name</label><input id="name" required></div>
+                        <div class="field">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="education">Education</option>
+                                <option value="health">Health</option>
+                                <option value="environment">Environment</option>
+                                <option value="poverty">Poverty Alleviation</option>
+                                <option value="animals">Animal Welfare</option>
+                                <option value="disaster">Disaster Relief</option>
+                            </select>
+                        </div>
+                        <div class="field"><label for="contact">Contact</label><input id="contact" type="email" placeholder="contact@example.org"></div>
+                        <div class="field"><label for="website">Website</label><input id="website" type="url" placeholder="https://..."></div>
+                        <div class="field"><label for="donationLink">Donation link</label><input id="donationLink" type="url" placeholder="https://..."></div>
+                        <div class="field"><label for="description">Description</label><textarea id="description" rows="4" required></textarea></div>
+                        <div class="row">
+                            <button id="submit-btn" type="submit" class="btn primary">Add</button>
+                            <button id="cancel-edit" type="button" class="btn" style="display:none">Cancel</button>
+                        </div>
+                        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+                <div>
+                    <h2>Feedback</h2>
+                    <div id="feedback-list" class="stack"></div>
+                </div>
+            </div>
+
+            <h2>All NGOs</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Contact</th>
+                            <th>Website</th>
+                            <th>Donation</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ngo-table"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot integration -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/10/22/16/20251022163802-PMVH6LIT.js" defer></script>
+
+    <script type="module" src="./admin.js"></script>
+</body>
+</html>
+
+
